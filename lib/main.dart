@@ -1,26 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'homePage.dart';
+import 'package:periodic_table_app/splashscreen.dart';
+import 'splashscreen.dart';
 
-void main() => runApp(PeriodicTableApp());
+void main() => runApp(FelementsApp());
 
-class PeriodicTableApp extends StatefulWidget {
-  const PeriodicTableApp({Key? key}) : super(key: key);
+class FelementsApp extends StatefulWidget {
+  const FelementsApp({Key? key}) : super(key: key);
 
   @override
-  _PeriodicTableAppState createState() => _PeriodicTableAppState();
+  _FelementsAppState createState() => _FelementsAppState();
 }
 
-class _PeriodicTableAppState extends State<PeriodicTableApp> {
+class _FelementsAppState extends State<FelementsApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: AnimatedSplashScreen(
-        splash: Image.asset('assets/logo.png'),
-        nextScreen: HomePage(),
-        duration: 3000,
-        splashIconSize: 1000,
-      ),
-    );
+    return SplashScreen();
   }
 }

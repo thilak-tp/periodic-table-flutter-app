@@ -11,13 +11,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Really Free',
+      ),
+      color: Colors.red,
       home: Scaffold(
+          drawer: Drawer(),
           appBar: AppBar(
-            title: Text("Forktail Periodic Table"),
-            centerTitle: true,
+            backgroundColor: Colors.cyan,
+            title: Text(
+              "Felements.",
+              style: TextStyle(fontSize: 40),
+            ),
+            // centerTitle: true,
           ),
           body: Center(
-            child: Text("It looks empty in here!"),
+            child: Text(
+              "It looks empty in here!",
+              style: TextStyle(fontSize: 30),
+            ),
           )),
     );
   }
