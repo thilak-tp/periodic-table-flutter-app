@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'elementTile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,9 +12,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Really Free',
-      ),
       color: Colors.red,
       home: Scaffold(
           drawer: Drawer(),
@@ -21,15 +19,19 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Colors.cyan,
             title: Text(
               "Felements.",
-              style: TextStyle(fontSize: 40),
+              style: TextStyle(
+                fontSize: 40,
+                fontFamily: 'Really Free',
+              ),
             ),
             // centerTitle: true,
           ),
-          body: Center(
-            child: Text(
-              "It looks empty in here!",
-              style: TextStyle(fontSize: 30),
-            ),
+          body: Column(
+            children: [
+              Center(
+                child: ElementTile(),
+              )
+            ],
           )),
     );
   }
