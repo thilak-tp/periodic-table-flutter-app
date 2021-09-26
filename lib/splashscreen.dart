@@ -14,10 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: AnimatedSplashScreen(
-        splash: Image.asset('assets/icons/logo.png'),
+        splash: Image.asset('assets/icons/felementsLogo.png'),
         nextScreen: HomePage(),
         duration: 3000,
-        splashIconSize: 500,
+        splashIconSize: 300,
         backgroundColor: Colors.cyan,
       ),
     );

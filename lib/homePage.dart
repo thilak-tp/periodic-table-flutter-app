@@ -14,8 +14,37 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       color: Colors.red,
       home: Scaffold(
-          drawer: Drawer(),
+          drawer: Drawer(
+            elevation: 10,
+            child: ListView(children: [
+              Row(
+                children: [
+                  Container(
+                    child: SizedBox(
+                        width: 130,
+                        height: 130,
+                        // backgroundColor: Colors.cyan,
+                        child: Image.asset("assets/icons/logo.png")),
+                  ),
+                  Row(
+                    children: [
+                      Text("By Forktech Solutions"),
+                      Text("\u{2122}"),
+                    ],
+                  )
+                ],
+              ),
+            ]),
+          ),
           appBar: AppBar(
+            actions: [
+              Container(
+                child: Image.asset('assets/icons/testtubeGreen.png'),
+                height: 15,
+                width: 15,
+                margin: EdgeInsets.all(10),
+              ),
+            ],
             backgroundColor: Colors.cyan,
             title: Text(
               "Felements.",
