@@ -20,18 +20,27 @@ class _ElementTileState extends State<ElementTile> {
           color: Colors.cyan[100],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Text(
-                elementAbbreviation,
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Arial',
-                    color: Colors.white),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.all(5),
+                child: Text(
+                  elementAbbreviation,
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Arial',
+                      color: Colors.white),
+                ),
               ),
             ),
-            Text(elementName)
+            Container(
+                child: Text(
+                  elementName,
+                  style: TextStyle(fontSize: 10),
+                ),
+                margin: EdgeInsets.all(8))
           ],
         ));
   }

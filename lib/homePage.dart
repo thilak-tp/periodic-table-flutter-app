@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
                 width: 15,
                 margin: EdgeInsets.all(10),
               ),
+              Container(width: 10, height: 100),
             ],
             backgroundColor: Colors.cyan,
             title: Text(
