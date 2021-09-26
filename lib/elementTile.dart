@@ -12,12 +12,13 @@ class _ElementTileState extends State<ElementTile> {
     String elementName = 'Hydrogen';
 
     return Container(
-        margin: EdgeInsets.all(30),
+        margin: EdgeInsets.all(5),
         width: 80,
         height: 80,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.cyan[100],
+          boxShadow: [BoxShadow(blurRadius: 1)],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

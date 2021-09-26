@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:periodic_table_app/elementDetails.dart';
 import 'elementTile.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,16 +38,8 @@ class _HomePageState extends State<HomePage> {
             ]),
           ),
           appBar: AppBar(
-            actions: [
-              Container(
-                child: Image.asset('assets/icons/testtubeGreen.png'),
-                height: 15,
-                width: 15,
-                margin: EdgeInsets.all(10),
-              ),
-              Container(width: 10, height: 100),
-            ],
             backgroundColor: Colors.cyan,
+            centerTitle: true,
             title: Text(
               "Felements.",
               style: TextStyle(
@@ -58,8 +51,44 @@ class _HomePageState extends State<HomePage> {
           ),
           body: Column(
             children: [
+              Container(
+                width: double.infinity,
+                height: 40,
+                margin: EdgeInsets.all(30),
+                decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(20)),
+
+                // width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'The Periodic Table of Elements.',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    Container(
+                      child: CircleAvatar(
+                          backgroundColor: Colors.cyan[600],
+                          child: Image.asset('assets/icons/testtubeGreen.png')),
+                      // height: 15,
+                      // width: 15,
+                      margin: EdgeInsets.all(5),
+                    ),
+                  ],
+                ),
+              ),
               Center(
-                child: ElementTile(),
+                child: InkWell(
+                  child: ElementTile(),
+                  onTap: () {
+                    print('Tile tapped!');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ElementDetails()));
+                  },
+                ),
               )
             ],
           )),
